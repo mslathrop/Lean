@@ -256,7 +256,8 @@ namespace QuantConnect.Lean.Engine.DataFeeds.Enumerators
             if (_dataResolution == Time.OneDay)
             {
                 // special case for daily, we need to emit a midnight bar even though markets are closed
-                var dailyBarEnd = GetNextOpenDateAfter(previous.Time.Date) + Time.OneDay;
+                var referenceDate = _fillForwardResolution.Value < Time.OneDay ? previous.Time.Date : previous.EndTime.Date;
+                var dailyBarEnd = GetNextOpenDateAfter(referenceDate) + Time.OneDay;
                 if (dailyBarEnd < nextFillForwardTime)
                 {
                     // only emit the midnight bar if it's the next bar to be emitted
