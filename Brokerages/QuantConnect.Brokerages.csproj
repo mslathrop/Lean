@@ -525,6 +525,13 @@
     <Compile Include="Tradier\Tokens.cs" />
     <Compile Include="Tradier\TradierBrokerageFactory.cs" />
     <Compile Include="Tradier\UserProfile.cs" />
+    <Compile Include="Poloniex\AuthenticationToken.cs" />
+    <Compile Include="Poloniex\PoloniexBrokerage.cs" />
+    <Compile Include="Poloniex\PoloniexBrokerage.Messaging.cs" />
+    <Compile Include="Poloniex\PoloniexBrokerage.Utility.cs" />
+    <Compile Include="Poloniex\PoloniexBrokerageFactory.cs" />
+    <Compile Include="Poloniex\PoloniexFill.cs" />
+    <Compile Include="Poloniex\Messages.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="InteractiveBrokers\IB-symbol-map.json">
@@ -565,6 +572,9 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Poloniex\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
